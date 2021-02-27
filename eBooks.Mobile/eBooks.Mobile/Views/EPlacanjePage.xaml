@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eBooks.Mobile.Views.EPlacanjePage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" Margin="10">
+            <StackLayout Padding="10">
+                <Label Text="E-PAY, sigurno plaćanje!" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
+                <Label Text="Molimo unesite podatke sa Vaše kartice" FontAttributes="Bold" FontSize="Default" HorizontalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+            <Grid HorizontalOptions="CenterAndExpand" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="70"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Ime i prezime" FontSize="14" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"></Label>
+                <Entry x:Name="imeInput" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center"></Entry>
+                <Entry x:Name="prezimeInput" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"></Entry>
+
+                <Label Text="Broj kartice" FontSize="14" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"></Label>
+                <Entry x:Name="brojKarticeInput" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"></Entry>
+
+                <Label Text="Datum isteka" FontSize="14" FontAttributes="Bold" Grid.Row="2" Grid.Column="0"></Label>
+                <Entry x:Name="mjesecInput" Grid.Row="2" Grid.Column="1" Placeholder="mm" HorizontalTextAlignment="Center"></Entry>
+                <Entry x:Name="godinaInput" Grid.Row="2" Grid.Column="2" Placeholder="yy" HorizontalTextAlignment="Center"></Entry>
+
+                <Label Text="CVC2" FontSize="14" FontAttributes="Bold" Grid.Row="3" Grid.Column="0"></Label>
+                <Entry x:Name="cvc2Input" Grid.Row="3" Grid.Column="1" HorizontalTextAlignment="Center"></Entry>
+
+                <Label Text="Opis" FontSize="14" FontAttributes="Bold" Grid.Row="4" Grid.Column="0"></Label>
+                <Entry x:Name="opisInput" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HeightRequest="60"></Entry>
+
+                <Label x:Name="pleaseWait" Text="Molim Vas pričekajte..." FontSize="14" FontAttributes="Bold" Grid.Row="5" Grid.ColumnSpan="3" IsVisible="True"></Label>
+                <Label x:Name="iznosTextLabel" Text="Iznos" FontSize="14" FontAttributes="Bold" Grid.Row="5" Grid.Column="0" IsVisible="False"></Label>
+                <Label x:Name="iznoslabel" Grid.Row="5" Grid.Column="1" IsVisible="False"></Label>
+                <Button x:Name="posaljiButton" Text="Pošalji" Grid.Row="5" Grid.Column="2" BackgroundColor="#2196F3" TextColor="White" Clicked="PosaljiButton_Clicked" IsVisible="False"></Button>
+
+                <Image x:Name="visaImage" Source="visa.png" Grid.Row="6" Grid.ColumnSpan="3" IsVisible="False"></Image>
+
+                <Label x:Name="loadingLabel" Grid.Row="7" Grid.ColumnSpan="3" Text="Molim Vas pričekajte..." IsVisible="False" HorizontalTextAlignment="Center" FontSize="14" FontAttributes="Bold"></Label>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

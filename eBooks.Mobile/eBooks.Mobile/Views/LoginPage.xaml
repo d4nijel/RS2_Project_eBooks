@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:eBooks.Mobile.ViewModels"
+             x:Class="eBooks.Mobile.Views.LoginPage">
+    <NavigationPage.TitleView>
+        <Label Text="Login @ eBooks" FontFamily="HelveticaNeue-Light"  TextColor="White" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    </NavigationPage.TitleView>
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" Margin="10" VerticalOptions="CenterAndExpand">
+
+            <Image Source="logo3.png"></Image>
+
+            <Label  Text="Korisničko ime" FontSize="16"></Label>
+            <Entry  x:Name="KorisnickoIme" Text="{Binding Username}"></Entry>
+
+            <Label Text="Lozinka" FontSize="16"></Label>
+            <Entry x:Name="lozinkaInput" Text="{Binding Password}" IsPassword="True"></Entry>
+
+            <Button Command="{Binding LoginCommand}"  HorizontalOptions="FillAndExpand" Text="Prijavi se" BackgroundColor="#2196F3" TextColor="White"></Button>
+            <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

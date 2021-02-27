@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eBooks.Mobile.Views.Registracija">
+    <NavigationPage.TitleView>
+        <Label Text="Registracija @ eBooks" FontFamily="HelveticaNeue-Light"  TextColor="White" FontAttributes="Bold" FontSize="20" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" Margin="10" VerticalOptions="CenterAndExpand">
+            <Grid HorizontalOptions="CenterAndExpand" Padding="10" VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="logo3.png" Grid.ColumnSpan="2"></Image>
+
+                <Label Text="Ime:" VerticalTextAlignment="Center" FontSize="16" Grid.Row="3"></Label>
+                <Entry x:Name="imeInput" Grid.Row="3" Grid.Column="1"></Entry>
+
+                <Label Text="Prezime:" VerticalTextAlignment="Center" FontSize="16" Grid.Row="4"></Label>
+                <Entry x:Name="prezimeInput" Grid.Row="4" Grid.Column="1"></Entry>
+
+                <Label Text="Email:" VerticalTextAlignment="Center" FontSize="16" Grid.Row="5"></Label>
+                <Entry x:Name="emailInput" Grid.Row="5" Grid.Column="1" ClassId="email"></Entry>
+
+                <Label Text="Korisničko ime:" VerticalTextAlignment="Center" FontSize="16" Grid.Row="6"></Label>
+                <Entry x:Name="korisnickoImeInput" Grid.Row="6" Grid.Column="1"></Entry>
+
+                <Label Text="Lozinka:" VerticalTextAlignment="Center" FontSize="16" Grid.Row="7"></Label>
+                <Entry x:Name="lozinkaInput" Grid.Row="7" Grid.Column="1" IsPassword="True"></Entry>
+
+                <Button x:Name="registracijaButton" Text="Registriraj se" Grid.Row="8" Grid.Column="1" BackgroundColor="#2196F3" TextColor="White" Clicked="RegistracijaButton_Clicked"></Button>
+                <Label x:Name="loadingLabel" Grid.Row="9" Grid.Column="1" Text="..." IsVisible="False"></Label>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

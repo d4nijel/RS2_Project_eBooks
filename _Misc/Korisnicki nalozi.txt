@@ -1,0 +1,29 @@
+Desktop aplikacija
+
+Korisnicko ime: desktop
+Lozinka: test
+
+Korisnicko ime: test2
+Lozinka: test
+
+-----------------------
+
+Mobilna aplikacija
+
+Korisnicko ime: mobile
+Lozinka: test
+
+Korisnicko ime: test2
+Lozinka: test
+
+Korisnicko ime: test3
+Lozinka: test
+
+Korisnicko ime: test4
+Lozinka: test
+
+Korisnicko ime: test7
+Lozinka: test
+
+Korisnicko ime: test8
+Lozinka: test

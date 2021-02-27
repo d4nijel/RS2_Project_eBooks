@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="eBooks.Mobile.Views.EditUserPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" Margin="10">
+            <StackLayout Padding="10">
+                <Label Text="Izmjena korisničkih podataka" FontAttributes="Bold" FontSize="16" HorizontalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+            <Grid HorizontalOptions="CenterAndExpand" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Ime i prezime" FontSize="14" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"></Label>
+                <Entry x:Name="imeInput" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="Center"></Entry>
+                <Entry x:Name="prezimeInput" Grid.Row="0" Grid.Column="2" HorizontalTextAlignment="Center"></Entry>
+
+                <Label Text="Datum registracije" FontSize="14" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"></Label>
+                <Entry x:Name="datumRegistracijeInput" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Center"></Entry>
+
+                <Label Text="Email" FontSize="14" FontAttributes="Bold" Grid.Row="2" Grid.Column="0"></Label>
+                <Entry x:Name="emailInput" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" ClassId="email"></Entry>
+
+                <Label Text="Korisničko ime" FontSize="14" FontAttributes="Bold" Grid.Row="3" Grid.Column="0"></Label>
+                <Entry x:Name="korisnickoImeInput" Grid.Row="3" Grid.Column="1"  Grid.ColumnSpan="2" HorizontalTextAlignment="Center"></Entry>
+
+                <Label Text="Lozinka" FontSize="14" FontAttributes="Bold" Grid.Row="4" Grid.Column="0"></Label>
+                <Entry x:Name="lozinkaInput" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" IsPassword="True"></Entry>
+
+                <Button x:Name="snimiButton" Text="Sačuvaj" Grid.Row="5" Grid.Column="2" BackgroundColor="#2196F3" TextColor="White" Clicked="SnimiButton_Clicked" ></Button>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

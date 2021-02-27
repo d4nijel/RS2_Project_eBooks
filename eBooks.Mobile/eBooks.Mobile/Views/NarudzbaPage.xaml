@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:eBooks.Mobile.ViewModels"
+             x:Class="eBooks.Mobile.Views.NarudzbaPage">
+    <ContentPage.BindingContext>
+        <vm:NarudzbaViewModel></vm:NarudzbaViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Margin="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <StackLayout>
+                <ListView ItemsSource="{Binding NarudzbaList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="1"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Knjiga.Naziv}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" Grid.Row="0"/>
+                                    <Label Text="{Binding Knjiga.OriginalniNaziv}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="15" Grid.Row="1"/>
+                                    <Label Text="{Binding Knjiga.Cijena, StringFormat='Cijena: {0} KM'}" TextColor="#2196F3" FontAttributes="Bold" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="15" Grid.Row="2"/>
+                                    <BoxView MinimumHeightRequest="1" Color="#5b5d68" Grid.Row="3"></BoxView>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Margin="10" Padding="10">
+                <Label x:Name="iznosLabel" TextColor="Black" FontSize="Medium" FontAttributes="Bold" ></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="10" Padding="10">
+                <Button x:Name="zakljuciButton" Text="Zaključi narudžbu" IsVisible="False" Clicked="ZakljuciButton_Clicked" TextColor="White" BackgroundColor="#2196F3" WidthRequest="200" HeightRequest="50" Padding="0" FontSize="16" FontAttributes="Bold"></Button>
+                <Button x:Name="otkaziButton" Text="Otkaži narudžbu" IsVisible="False" Clicked="OtkaziButton_Clicked" TextColor="White" BackgroundColor="#2196F3" WidthRequest="200" HeightRequest="50" Padding="0" FontSize="16" FontAttributes="Bold"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

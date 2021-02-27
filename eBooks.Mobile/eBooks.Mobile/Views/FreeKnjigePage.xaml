@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:eBooks.Mobile.ViewModels"
+             xmlns:converters="clr-namespace:eBooks.Mobile.Converters"
+             x:Class="eBooks.Mobile.Views.FreeKnjigePage">
+    <ContentPage.BindingContext>
+        <vm:KnjigeViewModel></vm:KnjigeViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="10" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <SearchBar x:Name="MainSearchBar" SearchButtonPressed="MainSearchBar_SearchButtonPressed"/>
+            <ListView ItemsSource="{Binding KnjigeList}" ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Image HeightRequest="100" Source="{Binding SlikaNaslovniceThumb, Converter={StaticResource imgConv}}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3"></Image>
+                                <Label Text="{Binding Naziv}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" Grid.Row="0" Grid.Column="1" Margin="10,0"/>
+                                <Label Text="{Binding OriginalniNaziv}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="15" Grid.Row="1" Grid.Column="1" Margin="10,0"/>
+                                <Label Text="Free" TextColor="#2196F3" FontAttributes="Bold" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="15" Grid.Row="2" Grid.Column="1" Margin="10,0"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
